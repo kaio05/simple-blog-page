@@ -5,12 +5,15 @@
 
 :root {
     --color-bold: #05ff5f;
+    --dark-clr: #1b1b1b;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 
 html, body {
@@ -18,15 +21,35 @@ html, body {
     font-family: 'poppins', Arial, Helvetica, sans-serif;
 }
 
-nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding: 5px;
+::selection {
+    background: var(--dark-clr);
+    color: white;
 }
 
-.menu {
-    display: none;
+header {
+    position: relative;
+    height: 60px;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.213);
+    z-index: 999;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo-img {
+    width: 200px;
 }
 
 ion-icon {
@@ -34,51 +57,141 @@ ion-icon {
     height: 40px;
 }
 
-/* .menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-} */
-
-a {
-    text-decoration: none;
+.menu {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: -500px;
+    transition: .5s;
 }
 
-header {
+.menu.show {
+    top: 60px;
+    position: fixed;
+}
+
+.menu a, .menu .search-wrapper {
+    display: block;
+    padding: 20px;
+    color: white;
+    background: var(--dark-clr);
+}
+
+.search {
+    width: 90%;
+    border-radius: 50px;
+    padding: 15px 15px 15px 50px;
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    left: 60px;
+    top: 253px;
+    color: var(--dark-clr);
+}
+
+.menu li:hover, .menu a:hover {
+    background: var(--color-bold);
+}
+
+.banner {
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     padding: 0 30px;
+    background-color: var(--dark-clr);
     background-image: url(/assets/pexels-rodolfo-quirós-2330137.jpg);
     background-size: cover;
 }
 
-header > h1 {
+.banner > h1 {
     font-size: 3em;
     color: transparent;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px var(--color-bold);
 }
 
-header > p {
+.banner > p {
     color: white;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+.highlighed, .blog-post {
+    margin: 0 auto;
+}
+
+.highlighed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .highlights h1 {
     font-size: 2em;
+    text-transform: capitalize;
 }
 
-.blog-post {
-    padding: 30px 20px;
+.post-slider {
+    border: 1px solid red;
+}
+
+.post-slider .post-wrapper {
+    width: 84%;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.post-content, .blog-post img,  .highlighed img {
+    max-width: 90vw;
+    padding: 10px;
+}
+
+.post-info {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 90vw;
+    row-gap: 20px;
+}
+
+.articles-.banner {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--dark-clr);
+    padding: 0 0 25px;
+}
+
+.blog-post img, .highlighed img {
+    border-radius: 25px;
 }
 
 .primary-btn {
     display: block;
-    margin: 20px auto;
     padding: 15px 30px;
+    margin: 40px auto;
     text-transform: capitalize;
-    background-color: #1b1b1b;
+    background-color: var(--dark-clr);
     color: white;
     font-weight: bold;
     border-radius: 3px;
@@ -87,9 +200,14 @@ header > p {
 
 .primary-btn:hover {
     background-color: var(--color-bold);
-    color: #1b1b1b;
+    color: var(--dark-clr);
     transform: scale(1.1);
     transition: .5s;
+    box-shadow: 2px 2px 0px var(--dark-clr);
+}
+
+.primary-btn:active {
+    box-shadow: inset 2px 2px 2px var(--dark-clr);
 }
 
 footer, .attribution, footer a {
@@ -97,7 +215,7 @@ footer, .attribution, footer a {
     justify-content: space-between;
     align-items: end;
     padding: 10px;
-    background: #1b1b1b;
+    background: var(--dark-clr);
     color: white;
 }
 

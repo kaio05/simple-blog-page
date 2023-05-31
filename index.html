@@ -5,45 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <script src="https://kit.fontawesome.com/000ca87c40.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media-queries.css">
 </head>
 <body>
-    <nav>
-        <ion-icon name="menu-outline"></ion-icon>
+    <header>
+        <nav class="">
+                <div class="logo">
+                    <img src="assets/logo-big.png" alt="logo" class="logo-img">
+                </div>
+                <ion-icon id="menu-toggle" name="menu-outline"></ion-icon>
+        </nav>
         <ul class="menu">
             <li><a href="">Home</a></li>
             <li><a href="">Categories</a></li>
             <li><a href="">Contact</a></li>
-            <input type="search" name="search-bar" id="search-bar" class="search">
+            <li class="search-wrapper"><label for="search-bar"><i class="fa-solid fa-magnifying-glass"></label></i><input type="search" name="search-bar" id="search-bar" class="search"></li>
         </ul>
-    </nav>
-    <header>
+    </header>
+    <div class="banner">
         <h1>Lorem ipsum dolor sit amet.</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> 
             Quia maxime quo quas dolores accusantium est error, <br> 
             rerum vitae enim! Vero.</p>
-    </header>
-    <section class="highlights">
-        <div class="blog-post highlighed">
-            <img src="https://placekitten.com/500/300" alt="Post">
-            <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, est!</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos reprehenderit temporibus numquam aliquid vero esse consequatur voluptate aperiam, repellendus labore.</p>
         </div>
-        <button class="primary-btn">Read more</button>
+    <section class="highlights">
+        <article class="highlighed">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="https://placekitten.com/500/600">
+                    <img src="https://placekitten.com/500/300" alt="">
+                </picture>
+            <div class="post-content">
+                <h1>highlighed article</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos reprehenderit temporibus numquam aliquid vero esse consequatur voluptate aperiam, repellendus labore.</p>
+                <button class="primary-btn">Read more</button>
+            </div>
+        </article>
     </section>
     <section class="articles">
-        <article class="blog-post">
-            <img src="https://placekitten.com/500/300" alt="Post">
-            <h1>Article</h1>
-        </article>
-        <article class="blog-post">
-            <img src="https://placekitten.com/500/300" alt="Post">
-            <h1>Article</h1>
-        </article>
-        <article class="blog-post">
-            <img src="https://placekitten.com/500/300" alt="Post">
-            <h1>Article</h1>
-        </article>
+        <div class="articles-header">
+            <h1>Articles</h1>
+        </div>
+        <div class="grid-container">
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="https://placekitten.com/500/300" alt="Post">
+                <div class="post-content">
+                    <h1>Lorem ipsum dolor sit amet.</h1>
+                    <div class="post-info"><span class="author">author</span><span class="date">01/01/2023</span></div>
+                </div>
+            </article>
+        </div>
         <button class="primary-btn">Show more</button>
     </section>
     <footer>
@@ -58,5 +109,7 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+
 </body>
 </html>
